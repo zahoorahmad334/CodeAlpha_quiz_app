@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import 'image_strings.dart';
-import 'colors.dart'; // Assuming your colors are in this file
+import 'colors.dart';
 
 class BackgroundColor extends StatelessWidget {
   final Widget child;
@@ -13,17 +13,24 @@ class BackgroundColor extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // Lottie animation in the background
+
         Positioned.fill(
-          child: Lottie.asset(
-            TImages.lottieAnimation,
-            fit: BoxFit.cover,
-            repeat: true,
+          child: Center(
+            child: Transform.scale(
+              scale: 1.8,
+              child: Lottie.asset(
+                TImages.lottieAnimation,
+                fit: BoxFit.cover,
+                repeat: true,
+                alignment: Alignment.center,
+              ),
+            ),
           ),
         ),
 
+
         Container(
-          color: TColors.primaryBackground.withOpacity(0.5), // Use TColors here
+          color: TColors.primaryBackground.withOpacity(0.5),
           child: child,
         ),
       ],

@@ -64,15 +64,20 @@ class FlashcardHome extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const QuestionScreen()),
+                        MaterialPageRoute(
+                            builder: (context) => const QuestionScreen()),
                       );
                     },
                     style: ElevatedButton.styleFrom(
                       textStyle: TextStyle(fontSize: buttonFontSize),
-                      minimumSize: Size(double.infinity, buttonHeight),
+                      backgroundColor: Colors.blue.withOpacity(0.7),
+                      minimumSize: Size(
+                        double.infinity,
+                        buttonHeight,
+                      ),
                     ),
                     child: const Text('Start Quiz'),
-                  ),
+                  )
                 ],
               ),
             ),
